@@ -1,0 +1,29 @@
+# 配置Tomcat端口号
+server:
+  port: 9997
+# 配置Spring Boot项目名
+spring:
+  application:
+    name: mall-admin
+# 配置Dubbo信息
+  dubbo:
+    application:
+      name: mall-admin
+    protocol:   #协议配置，用于配置提供服务的协议信息，协议由提供方指定，消费方被动接受。
+      name: dubbo
+      port: 20880
+      serialization: java
+    registry:
+      address: zookeeper://localhost:2181
+    scan: com.augustars.mall  #服务暴露与发现消费所在的package
+# 配置视MVC图解析器的前后缀
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+    favicon:
+      enabled: false
+# 配置JPA信息
+  jpa:
+    show-sql: true
+    open-in-view: true
